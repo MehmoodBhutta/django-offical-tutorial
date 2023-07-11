@@ -57,3 +57,4 @@ def detail(request, question_id):
     except Question.DoesNotExist:
         raise Http404("Are you Gay? this page does not exist")
     return render(request, "polls/detail.html", {"question": question})
+
