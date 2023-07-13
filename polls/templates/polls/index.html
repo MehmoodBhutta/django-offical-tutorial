@@ -6,4 +6,10 @@
     </ul>
 {% else %}
     <p>No polls are available.</p>
+    
 {% endif %}
+
+<a href="{% url 'polls:addques' %}">Add new question</a>
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'polls/style.css' %}">
