@@ -1,7 +1,14 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'polls/style.css' %}">
 {% if question_list %}
     <ul>
     {% for question in question_list %}
-        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+        <li>
+                     <a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a>
+            </h1>            {% for choice in question.choice_set.all  %}
+                <span class="options"> {{ choice.choice_text }} </span>
+            {% endfor %}
+        </li>
     {% endfor %}
     </ul>
 {% else %}
@@ -9,7 +16,6 @@
     
 {% endif %}
 
-<a href="{% url 'polls:addques' %}">Add new question</a>
-{% load static %}
 
-<link rel="stylesheet" href="{% static 'polls/style.css' %}">
+<a href="{% url 'polls:addques' %}">Add new question</a>
+
