@@ -1,0 +1,30 @@
+li a {
+  color: skyblue;
+}
+body {
+
+  &.index {
+    background: url("images/sunset.avif") repeat;
+  }
+
+  &.detail {
+    background: url("images/tree.jpg") repeat ;
+  }
+  
+}
+
+li a:hover {
+  color: yellow;
+}
+
+li {
+  .options {
+    display: none;
+  }
+}
+
+li:hover {
+  .options {
+    display: inline-block;
+  }
+}

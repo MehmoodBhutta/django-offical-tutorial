@@ -123,3 +123,22 @@ def newques(request):
             )
             newquestion.save()
             return HttpResponseRedirect(reverse("polls:index"))
+        
+def update(request, id):
+  question = Question.objects.get(id=id)
+  if request.method == 'GET':
+        return render(request, "polls/update.html", {"question": question})
+  if request.method == 'POST':
+      new_question = request.POST.get('queston')
+      question.question_text = new_question
+      question.save()
+      return render(request, "polls/detail.html", {"question": question}) 
+  
+def delete(request, id):
+  question= Question.objects.get(id=id)
+  if request.method == 'GET':
+    
+     
+    question.delete()
+    return render(request, "polls/index.html",{"question":Question})
+  

@@ -20,4 +20,8 @@ urlpatterns = [
     #ex polls/addquestions
     path("addques/", views.addques, name="addques"),
     path("newques/", views.newques, name="newques"),
+
+    path('update/<int:id>', views.update, name='update'),
+    path('delete/<int:id>', views.delete, name='delete'),
+
 ]
