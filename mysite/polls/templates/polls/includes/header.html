@@ -1,3 +1,11 @@
+{% load static %}
 <header>
-    <nav><a href="{% url 'polls:index' %}">Home page</a></nav>
+    
+    <nav>
+        <a href="{% url 'polls:index' %}">
+            <img src="{% static 'polls/images/uwu.jpg' %}" alt="uwu image" width="50px" height="50px" style="border-radius: 50px;">
+
+        <a href="{% url 'polls:index' %}"></a>
+        </a>
+    </nav>
 </header>
