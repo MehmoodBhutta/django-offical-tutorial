@@ -2,15 +2,22 @@ li a {
   color: skyblue;
 }
 body {
-
   &.index {
     background: url("images/sunset.avif") repeat;
   }
 
   &.detail {
-    background: url("images/tree.jpg") repeat ;
+    background: url("images/tree.jpg") repeat;
+
+    padding: 25px;
+    background-color: white;
+    color: black;
+    font-size: 25px;
   }
-  
+  .dark-mode {
+    background-color: black;
+    color: white;
+  }
 }
 
 li a:hover {
@@ -27,9 +34,4 @@ li:hover {
   .options {
     display: inline-block;
   }
-}
-div {
-   
-    font-family: "Times New Roman", Times, serif;
-  
 }

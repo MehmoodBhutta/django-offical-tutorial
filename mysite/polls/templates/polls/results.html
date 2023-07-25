@@ -8,18 +8,24 @@
 
 {%block page_body%}
     {% include "polls/includes/header.html" %}
-    <body class='results'>
+    <body class='results' id="demo">
         <header>
         </header>
-        <h1>{{ question.question_text }}</h1>
+        <h1 style="color: red;">{{ question.question_text }}</h1>
 
         <ul>
         {% for choice in question.choice_set.all %}
-            <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+            <li style="color: red;">{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
         {% endfor %}
         </ul>
 
         <a href="{% url 'polls:detail' question.id %}">Vote again?</a> <br>
         <a href="{% url 'polls:reset' question.id %}"> Reset?</a>
+        <button onclick="myFunction()">dark mode</button>
+<script>
+    
+function myFunction(){
+    document.getElementById("demo").style.backgroundColor = "black";
+}</script>
     </body>
 {% endblock  %}
